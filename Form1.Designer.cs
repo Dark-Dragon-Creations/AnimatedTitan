@@ -19,8 +19,10 @@
             txtMessages = new TextBox();
             lblImageFolder = new Label();
             txtImageFolder = new TextBox();
+            btnFindImageFolder = new Button();
             lblOutputPath = new Label();
             txtOutputPath = new TextBox();
+            btnFindOutputPath = new Button();
             lblTotalDuration = new Label();
             txtTotalDuration = new TextBox();
             lblFilename = new Label();
@@ -35,7 +37,7 @@
             btnCreateGif.TabIndex = 0;
             btnCreateGif.Text = "Create GIF";
             btnCreateGif.UseVisualStyleBackColor = true;
-            btnCreateGif.Click += btnCreateGif_Click;
+            btnCreateGif.Click += new EventHandler(this.btnCreateGif_Click);
             // 
             // txtMessages
             // 
@@ -58,24 +60,44 @@
             // 
             txtImageFolder.Location = new Point(12, 25);
             txtImageFolder.Name = "txtImageFolder";
-            txtImageFolder.Size = new Size(474, 23);
+            txtImageFolder.Size = new Size(405, 23);
             txtImageFolder.TabIndex = 3;
+            // 
+            // btnFindImageFolder
+            // 
+            btnFindImageFolder.Location = new Point(423, 25);
+            btnFindImageFolder.Name = "btnFindImageFolder";
+            btnFindImageFolder.Size = new Size(63, 23);
+            btnFindImageFolder.TabIndex = 4;
+            btnFindImageFolder.Text = "Find Folder";
+            btnFindImageFolder.UseVisualStyleBackColor = true;
+            btnFindImageFolder.Click += new EventHandler(this.btnFindImageFolder_Click);
             // 
             // lblOutputPath
             // 
             lblOutputPath.AutoSize = true;
-            lblOutputPath.Location = new Point(12, 48);
+            lblOutputPath.Location = new Point(12, 51);
             lblOutputPath.Name = "lblOutputPath";
             lblOutputPath.Size = new Size(75, 15);
-            lblOutputPath.TabIndex = 4;
+            lblOutputPath.TabIndex = 5;
             lblOutputPath.Text = "Output Path:";
             // 
             // txtOutputPath
             // 
-            txtOutputPath.Location = new Point(12, 64);
+            txtOutputPath.Location = new Point(12, 67);
             txtOutputPath.Name = "txtOutputPath";
-            txtOutputPath.Size = new Size(474, 23);
-            txtOutputPath.TabIndex = 5;
+            txtOutputPath.Size = new Size(405, 23);
+            txtOutputPath.TabIndex = 6;
+            // 
+            // btnFindOutputPath
+            // 
+            btnFindOutputPath.Location = new Point(423, 67);
+            btnFindOutputPath.Name = "btnFindOutputPath";
+            btnFindOutputPath.Size = new Size(63, 23);
+            btnFindOutputPath.TabIndex = 7;
+            btnFindOutputPath.Text = "Find Folder";
+            btnFindOutputPath.UseVisualStyleBackColor = true;
+            btnFindOutputPath.Click += new EventHandler(this.btnFindOutputPath_Click);
             // 
             // lblTotalDuration
             // 
@@ -83,7 +105,7 @@
             lblTotalDuration.Location = new Point(12, 126);
             lblTotalDuration.Name = "lblTotalDuration";
             lblTotalDuration.Size = new Size(84, 15);
-            lblTotalDuration.TabIndex = 6;
+            lblTotalDuration.TabIndex = 8;
             lblTotalDuration.Text = "Total Duration:";
             // 
             // txtTotalDuration
@@ -91,23 +113,23 @@
             txtTotalDuration.Location = new Point(12, 142);
             txtTotalDuration.Name = "txtTotalDuration";
             txtTotalDuration.Size = new Size(474, 23);
-            txtTotalDuration.TabIndex = 7;
+            txtTotalDuration.TabIndex = 9;
             // 
             // lblFilename
             // 
             lblFilename.AutoSize = true;
-            lblFilename.Location = new Point(12, 87);
+            lblFilename.Location = new Point(12, 90);
             lblFilename.Name = "lblFilename";
             lblFilename.Size = new Size(58, 15);
-            lblFilename.TabIndex = 8;
+            lblFilename.TabIndex = 10;
             lblFilename.Text = "Filename:";
             // 
             // txtFilename
             // 
-            txtFilename.Location = new Point(12, 103);
+            txtFilename.Location = new Point(12, 106);
             txtFilename.Name = "txtFilename";
             txtFilename.Size = new Size(474, 23);
-            txtFilename.TabIndex = 9;
+            txtFilename.TabIndex = 11;
             // 
             // Form1
             // 
@@ -116,8 +138,10 @@
             Controls.Add(lblFilename);
             Controls.Add(txtTotalDuration);
             Controls.Add(lblTotalDuration);
+            Controls.Add(btnFindOutputPath);
             Controls.Add(txtOutputPath);
             Controls.Add(lblOutputPath);
+            Controls.Add(btnFindImageFolder);
             Controls.Add(txtImageFolder);
             Controls.Add(lblImageFolder);
             Controls.Add(txtMessages);
@@ -132,8 +156,10 @@
         private System.Windows.Forms.TextBox txtMessages;
         private System.Windows.Forms.Label lblImageFolder;
         private System.Windows.Forms.TextBox txtImageFolder;
+        private System.Windows.Forms.Button btnFindImageFolder;
         private System.Windows.Forms.Label lblOutputPath;
         private System.Windows.Forms.TextBox txtOutputPath;
+        private System.Windows.Forms.Button btnFindOutputPath;
         private System.Windows.Forms.Label lblTotalDuration;
         private System.Windows.Forms.TextBox txtTotalDuration;
         private System.Windows.Forms.Label lblFilename;

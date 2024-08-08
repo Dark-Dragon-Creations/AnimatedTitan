@@ -75,6 +75,36 @@ namespace AnimatedTitan
             txtMessages.Text = message + Environment.NewLine + txtMessages.Text;
         }
 
+        private void btnFindImageFolder_Click(object sender, EventArgs e)
+        {
+            using (FolderBrowserDialog dialog = new FolderBrowserDialog())
+            {
+                if (Directory.Exists(txtImageFolder.Text))
+                {
+                    dialog.SelectedPath = txtImageFolder.Text;
+                }
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    txtImageFolder.Text = dialog.SelectedPath;
+                }
+            }
+        }
+
+        private void btnFindOutputPath_Click(object sender, EventArgs e)
+        {
+            using (FolderBrowserDialog dialog = new FolderBrowserDialog())
+            {
+                if (Directory.Exists(txtOutputPath.Text))
+                {
+                    dialog.SelectedPath = txtOutputPath.Text;
+                }
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    txtOutputPath.Text = dialog.SelectedPath;
+                }
+            }
+        }
+
         private void btnCreateGif_Click(object sender, EventArgs e)
         {
             if (_config == null)
